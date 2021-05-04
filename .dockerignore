@@ -1,0 +1,15 @@
+.github
+logs
+node_modules
+run
+test
+typings
+.autod.conf.js
+.dockerignore
+.eslintignore
+.eslintrc
+.gitignore
+.travis.yml
+jsconfig.json
+package-lock.json
+config/config.local.js

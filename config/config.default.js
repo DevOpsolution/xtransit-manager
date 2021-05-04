@@ -92,18 +92,18 @@ module.exports = appInfo => {
     agent: false,
     clients: {
       xprofiler_console: {
-        host: '',
-        port: 3306,
-        user: '',
-        password: '',
-        database: 'xprofiler_console',
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        user: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_CONSOLE_DATABASE,
       },
       xprofiler_logs: {
-        host: '',
-        port: 3306,
-        user: '',
-        password: '',
-        database: 'xprofiler_logs',
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        user: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_LOGS_DATABASE,
       },
     },
   };
@@ -112,25 +112,25 @@ module.exports = appInfo => {
   userConfig.redis = {
     client: {
       sentinels: null,
-      port: 6379,
-      host: '',
-      password: '',
+      port: process.env.REDIS_PORT,
+      host: process.env.REDIS_HOST,
+      password: process.env.REDIS_PASSWORD,
       db: 0,
     },
   };
 
   // mailer
   userConfig.mailer = {
-    host: '',
-    port: 25,
+    host: process.env.MAILER_HOST,
+    port: process.env.MAILER_PORT,
     secure: false,
     auth: {
-      user: '',
-      pass: '',
+      user: process.env.MAILER_USERNAME,
+      pass: process.env.MAILER_PASSWORD,
     },
   };
 
-  userConfig.xprofilerConsole = '';
+  userConfig.xprofilerConsole = process.env.XPROFILER_CONSOLE_URL;
 
   return {
     ...config,
